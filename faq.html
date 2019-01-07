@@ -42,11 +42,17 @@
 					<p>LION/web is a web-site that can be accessed via www.lipidontology.com. LION/web performs enrichment analyses on user-provided lipidomics datasets. The tool will report enrichment of LION-terms, which are sets of lipids that share a certain property. An example of a LION-term is 'sphingolipids', this term contains all lipid species in the dataset of the class 'sphingolipids'.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
+                         <li>
+				<a class="cd-faq-trigger" href="#0">Does LION/web use Gene Ontology (GO)?</a>
+				<div class="cd-faq-content">
+					<p>No. Although there are many similarites, LION/web is not using Gene Ontology (GO). LION/web performs enrichment analysis using a dedicated lipid-related ontology called LION. Nevertheless, the enrichment analysis algorithm (the <a href=http://bioconductor.org/packages/release/bioc/html/topGO.html target="_blank">topGO</a> R-package) that is used by LION/web was initially built for GO-enrichment.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">Do I have to pay for LION/web services?</a>
 				<div class="cd-faq-content">
-					<p>No, LION/web is for free.</p>
+					<p>No, you can use LION/web for free.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -65,7 +71,7 @@
 					<em>LION/web: a web-based ontology enrichment tool for lipidomic data analysis. Martijn R. Molenaar, Aike Jeucken, Tsjerk A. Wassenaar, Chris H. A. van de Lest, Jos F. Brouwers, J. Bernd Helms. BioRxiv 2018. doi: </em>
                                         <a href=https://doi.org/10.1101/398040 target="_blank"><em>https://doi.org/10.1101/398040</em></a>    
                                         <br><br>
-                                        <p>The paper is currently under review in a peer-review journal.</p>
+                                        <p>The paper is currently under review in a peer-reviewed journal.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 		</ul> <!-- cd-faq-group -->
@@ -75,14 +81,125 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">How should I format input files?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+					<p>There are three ways to submit data. In most cases, users will use the 'ranking mode' with CSV-file upload. Here, a 'comma-separated values' (CSV)-file can be uploaded to LION/web. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid conentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is three, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
+<table width="865">
+<tbody>
+<tr>
+<td width="130">&nbsp;</td>
+<td width="80">conA</td>
+<td width="80">conA</td>
+<td width="80">conA</td>
+<td width="80">conB</td>
+<td width="80">conB</td>
+<td width="80">conB</td>
+<td width="80">...</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>smp1</td>
+<td>smp2</td>
+<td>smp3</td>
+<td>smp4</td>
+<td>smp5</td>
+<td>smp6</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PI(32:3)</td>
+<td>0.392&nbsp;</td>
+<td>0.683&nbsp;</td>
+<td>0.506&nbsp;</td>
+<td>0.719&nbsp;</td>
+<td>0.033&nbsp;</td>
+<td>0.831&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PG(18:1/22:1)</td>
+<td>0.742&nbsp;</td>
+<td>0.747&nbsp;</td>
+<td>0.654&nbsp;</td>
+<td>0.139&nbsp;</td>
+<td>0.145&nbsp;</td>
+<td>0.951&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(16:0/22:3)</td>
+<td>0.197&nbsp;</td>
+<td>0.899&nbsp;</td>
+<td>0.700&nbsp;</td>
+<td>0.547&nbsp;</td>
+<td>0.306&nbsp;</td>
+<td>0.072&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PG(14:0/16:0)</td>
+<td>0.576&nbsp;</td>
+<td>0.622&nbsp;</td>
+<td>0.057&nbsp;</td>
+<td>0.208&nbsp;</td>
+<td>0.528&nbsp;</td>
+<td>0.013&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(O-18:0/20:6)</td>
+<td>0.777&nbsp;</td>
+<td>0.549&nbsp;</td>
+<td>0.678&nbsp;</td>
+<td>0.084&nbsp;</td>
+<td>0.023&nbsp;</td>
+<td>0.028&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(18:1/20:1)</td>
+<td>0.725&nbsp;</td>
+<td>0.012&nbsp;</td>
+<td>0.166&nbsp;</td>
+<td>0.874&nbsp;</td>
+<td>0.549&nbsp;</td>
+<td>0.337&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>SM(d18:1/16:1)</td>
+<td>0.603&nbsp;</td>
+<td>0.250&nbsp;</td>
+<td>0.191&nbsp;</td>
+<td>0.445&nbsp;</td>
+<td>0.121&nbsp;</td>
+<td>0.189&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<br><p>Data can also be submitted manually. Check the 'enrichment analysis modes' section for more information.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Should I normalize my data before submitting it to LION/web?</a>
+				<div class="cd-faq-content">
+					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check wether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular web-site that support several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a> .</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What lipid identifiers can I use?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi tempore, placeat quisquam rerum! Eligendi fugit dolorum tenetur modi fuga nisi rerum, autem officiis quaerat quos. Magni quia, quo quibusdam odio. Error magni aperiam amet architecto adipisci aspernatur! Officia, quaerat magni architecto nostrum magnam fuga nihil, ipsum laboriosam similique voluptatibus facilis nobis? Eius non asperiores, nesciunt suscipit veniam blanditiis veritatis provident possimus iusto voluptas, eveniet architecto quidem quos molestias, aperiam eum reprehenderit dolores ad deserunt eos amet. Vero molestiae commodi unde dolor dicta maxime alias, velit, nesciunt cum dolorem, ipsam soluta sint suscipit maiores mollitia assumenda ducimus aperiam neque enim! Quas culpa dolorum ipsam? Ipsum voluptatibus numquam natus? Eligendi explicabo eos, perferendis voluptatibus hic sed ipsam rerum maiores officia! Beatae, molestias!</p>
+					<p>Lipid nomenclature is not standardized in the lipidomics field. The best way to submit lipidomics data to LION/web is to make use of the notation style of LIPIDMAPS. In short, lipid species start with a class-prefix, followed by fatty acids that are surrounded by parentheses: (nr_of_C:nr_of_DBs/nr_of_C:nr_of_DBs). For example: PE(16:0/18:1), SM(d18:1/20:1), LPC(16:0). It's also possible to sum fatty acids: PC(36:2). Check <a href=https://www.lipidmaps.org target="_blank">www.lipidmaps.org</a> for more examples. A full list of currently supported lipid species can be found in the  <a href=https://www.biorxiv.org/content/early/2018/10/07/398040.figures-only target="_blank">Supplemental Data 5</a> section from the LION/web pre-print. LION/web also support other often used notation styles, for instance notations without parentheses: PC 32:0. LION/web will try to convert this notation into LIPIDMAPS style. A list of conversion examples can be found in the pre-print's <a href=https://www.biorxiv.org/content/early/2018/10/07/398040.figures-only target="_blank">Supplemental Data 6</a> section.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -90,32 +207,54 @@
 		</ul> <!-- cd-faq-group -->
 
 		<ul id="Modes" class="cd-faq-group">
-			<li class="cd-faq-title"><h2>Analysis Modes</h2></li>
+			<li class="cd-faq-title"><h2>Enrichment Analysis Modes</h2></li>
 			<li>
-				<a class="cd-faq-trigger" href="#0">What are the analysis modes in LION/web?</a>
+				<a class="cd-faq-trigger" href="#0">What are the enrichment analysis modes in LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis earum autem consectetur labore eius tenetur esse, in temporibus sequi cum voluptatem vitae repellat nostrum odio perspiciatis dolores recusandae necessitatibus, unde, deserunt voluptas possimus veniam magni soluta deleniti! Architecto, quidem, totam. Fugit minus odit unde ea cupiditate ab aperiam sed dolore facere nihil laboriosam dolorum repellat deleniti aliquam fugiat laudantium delectus sint iure odio, necessitatibus rem quisquam! Ipsum praesentium quam nisi sint, impedit sapiente facilis laudantium mollitia quae fugiat similique. Dolor maiores aliquid incidunt commodi doloremque rem! Quaerat, debitis voluptatem vero qui enim, sunt reiciendis tempore inventore maxime quasi fugiat accusamus beatae modi voluptates iste officia esse soluta tempora labore quisquam fuga, cum. Sint nemo iste nulla accusamus quam qui quos, vero, minus id. Eius mollitia consequatur fugit nam consequuntur nesciunt illo id quis reprehenderit obcaecati voluptates corrupti, minus! Possimus, perspiciatis!</p>
+					<p>LION/web supports two different enrichment analysis modes: 'ranking mode' and the 'target-list mode'. The choice of the best mode depends on the type of data. For more information, check the representative sub-sections about these modes. </p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">When should I choose "ranking mode"</a>
+                         <li>
+				<a class="cd-faq-trigger" href="#0">When should I choose 'target-list mode'?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo tempore soluta, minus magnam non blanditiis dolore, in nam voluptas nobis minima deserunt deleniti id animi amet, suscipit consequuntur corporis nihil laborum facere temporibus. Qui inventore, doloribus facilis, provident soluta voluptas excepturi perspiciatis fugiat odit vero! Optio assumenda animi at! Assumenda doloremque nemo est sequi eaque, ipsum id, labore rem nisi, amet similique vel autem dolore totam facilis deserunt. Mollitia non ut libero unde accusamus praesentium sint maiores, illo, nemo aliquid?</p>
+					<p>The easiest way to get a feeling for enrichment analysis is by comparing a small subset of lipids ('target-list') with all the lipids in the experiment ('background-list'). This subset can be derived from many types of analysis. For instance, in a time-course experiment, it can happen that a subset of lipids behaves very similar: these lipids have a high level of correlation with each other. A question that migh rise is: do they share certain properties, like lipid class, or level of unsaturation? This question can be addressed in the 'target-list mode'. Simply enter the lipid names from the target-list in the upper panel and enter all lipid names in the experiment in the bottom panel. After submission, the fractions of all LION-terms will be assessed for both the target-list and the background list and compared. This is done by a one-tailed Fisher's exact test. This test will calculate the probability ('p-value') that the fractions of lipids associated with property X in both the target-list and the background-list are the same. In contrast, a low p-value will be returned when property X is more abundant in the target-list than in the background-list. For example, a target-list contains 20 lipids, of which 10 (= 50%) are fom the class phospatidylcholine. The background list contains 400 lipids and 50 (= 12.5%) of them are fom the class phospatidylcholine. This means that phospatidylcholines are 4x enriched (50 / 12.5 = 4) in the target-list. Indeed, a one-tailed Fisher's exact test return a p-value of 0.001785476: phospatidylcholines are (very) significantly enriched in the target-list.</p>
+
+				</div> <!-- cd-faq-content -->
+			</li>    
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">When should I choose 'ranking mode'</a>
+				<div class="cd-faq-content">
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
-			<li>
-				<a class="cd-faq-trigger" href="#0">When should I choose "target-list mode"?</a>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">What are local statistics and why do I need them?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">What local statistics should I choose?</a>
+				<div class="cd-faq-content">
+					<p>...</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Is it possible to use my own local statistics?</a>
+				<div class="cd-faq-content">
+					<p>Yes, this is possible. To do this, go to 'ranking mode', skip the '(i) process input' tab and go directly to the '(ii) analysis' tab. Here is a form where lipids can be entered followed by a value, separated by a comma (or tab). This value can be your own local statistic. If you calculate this in a spreadsheet, data can directly be copy-pasted to the form.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">Where can I find some examples to illustrate LION/web's workflow?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum at aspernatur iure facere ab a corporis mollitia molestiae quod omnis minima, est labore quidem nobis accusantium ad totam sunt doloremque laudantium impedit similique iste quasi cum! Libero fugit at praesentium vero. Maiores non consequuntur rerum, nemo a qui repellat quibusdam architecto voluptatem? Sequi, possimus, cupiditate autem soluta ipsa rerum officiis cum libero delectus explicabo facilis, odit ullam aperiam reprehenderit! Vero ad non harum veritatis tempore beatae possimus, ex odio quo.</p>
+					<p>Examples are available below the input forms.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 		</ul> <!-- cd-faq-group -->
@@ -124,21 +263,21 @@
 			<ul id="Options" class="cd-faq-group">
 				<li class="cd-faq-title"><h2>Options</h2></li>
 				<li>
-					<a class="cd-faq-trigger" href="#0">When should I select 'Exclude parent terms with same associations as child'?</a>
+					<a class="cd-faq-trigger" href="#0">Should I select 'exclude parent terms with same associations as child'?</a>
 					<div class="cd-faq-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem! Aut, totam rerum, cupiditate quae aperiam voluptas rem inventore quas, ex maxime culpa nam soluta labore at amet nihil laborum? Explicabo numquam, sit fugit, voluptatem autem atque quis quam voluptate fugiat earum rem hic, reprehenderit quaerat tempore at. Aperiam.</p>
+						<p>LION has a hierarchical structure. This means that LION-terms are subdivided into more specific LION-terms. However, sometimes 'child' terms contain the same lipid species as their parents. In this case, assessing enrichment of both terms will result in the same enrichment scores, without providing useful information. Switching on this option will skip the parent term, resulting in increased statistical power.</p>
 					</div> <!-- cd-faq-content -->
 				</li>
                                 <li>
-					<a class="cd-faq-trigger" href="#0">When should I select 'Automatically send unmatched lipids to LION-team'?</a>
+					<a class="cd-faq-trigger" href="#0">Should I select 'automatically send unmatched lipids to LION-team'?</a>
 					<div class="cd-faq-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem! Aut, totam rerum, cupiditate quae aperiam voluptas rem inventore quas, ex maxime culpa nam soluta labore at amet nihil laborum? Explicabo numquam, sit fugit, voluptatem autem atque quis quam voluptate fugiat earum rem hic, reprehenderit quaerat tempore at. Aperiam.</p>
+						<p>This will help us to increase the coverage of LION. For more information, see the Privacy sub-section.</p>
 					</div> <!-- cd-faq-content -->
 				</li>
                                 <li>
-					<a class="cd-faq-trigger" href="#0">When should I select 'Preselect LION-terms for analysis'?</a>
+					<a class="cd-faq-trigger" href="#0">Should I select 'preselect LION-terms for analysis'?</a>
 					<div class="cd-faq-content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae quidem blanditiis delectus corporis, possimus officia sint sequi ex tenetur id impedit est pariatur iure animi non a ratione reiciendis nihil sed consequatur atque repellendus fugit perspiciatis rerum et. Dolorum consequuntur fugit deleniti, soluta fuga nobis. Ducimus blanditiis velit sit iste delectus obcaecati debitis omnis, assumenda accusamus cumque perferendis eos aut quidem! Aut, totam rerum, cupiditate quae aperiam voluptas rem inventore quas, ex maxime culpa nam soluta labore at amet nihil laborum? Explicabo numquam, sit fugit, voluptatem autem atque quis quam voluptate fugiat earum rem hic, reprehenderit quaerat tempore at. Aperiam.</p>
+						<p>By default, all LION-terms that can be associated with the dataset are assessed for enrichment analysis. When you want to asses only a selection of LION-terms, this option should be switched on. LION-terms that should be evaluated should be selected below the option switch. Note that LION has a hierarchical structure, sub-branches can be displayed by clicking on the symbol left of the names. Only (green) selected LION-terms will used in the analysis. An important benefit of LION-term pre-selection is the decreased amount of LION-terms, resulting in increased statistical power.</p>
 					</div> <!-- cd-faq-content -->
 				</li>
                 </ul> <!-- cd-faq-group -->
@@ -148,21 +287,21 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">What kind of results is generated by LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION-input tab?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur accusantium dolorem vel, ad, nostrum natus eos, nemo placeat quos nisi architecto rem dolorum amet consectetur molestiae reprehenderit cum harum commodi beatae necessitatibus. Mollitia a nostrum enim earum minima doloribus illum autem, provident vero et, aspernatur quae sunt illo dolorem. Corporis blanditiis, unde, neque, adipisci debitis quas ullam accusantium repudiandae eum nostrum quis! Velit esse harum qui, modi ratione debitis alias laboriosam minus eaque, quod, itaque labore illo totam aut quia fuga nemo. Perferendis ipsa laborum atque assumenda tempore aspernatur a eos harum non id commodi excepturi quaerat ullam, explicabo, incidunt ipsam, accusantium quo magni ut! Ratione, magnam. Delectus nesciunt impedit praesentium sed, aliquam architecto dolores quae, distinctio consectetur obcaecati esse, consequuntur vel sit quis blanditiis possimus dolorum. Eaque architecto doloremque aliquid quae cumque, vitae perferendis enim, iure fugiat, soluta aut!</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION-enrichment table tab?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -170,28 +309,42 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment graph tab?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment network tab?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
+                        <li>
+				<a class="cd-faq-trigger" href="#0">What is the difference between p-values and FDR q-values?</a>
+				<div class="cd-faq-content">
+					<p>FDR q-values are correct p-values to circumvent the multiple comparisons problem. More information about this topic can be found <a href=https://towardsdatascience.com/an-overview-of-methods-to-address-the-multiple-comparison-problem-310427b3ba92 target="_blank">here</a>.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+
+                        <li>
+				<a class="cd-faq-trigger" href="#0">LION/web reports the enrichment of biophysical properties, what does that mean?</a>
+				<div class="cd-faq-content">
+					<p>...</p>
+				</div> <!-- cd-faq-content -->
+			</li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">How can I download the results?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>...</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What is the difference between 'download table' and 'download report'?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>....</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 		</ul> <!-- cd-faq-group -->
@@ -201,21 +354,21 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Will my datasets be stored somewhere?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+					<p>User-provided datasets and enrichment results will NOT be stored and won't be visable for other users or the LION-team. All results should be downloaded directly after analysis, as they will be lost after 10 minutes of inactivity.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">Will my user information be stored?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>LION/web collects some anonymous user statistics to be able to monitor the website's usage.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
-				<a class="cd-faq-trigger" href="#0">What will happen when I select 'Automatically send unmatched lipids to LION-team' in the options panel?</a>
+				<a class="cd-faq-trigger" href="#0">What will happen when I select 'automatically send unmatched lipids to LION-team' in the options panel?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus magni vero deserunt enim et quia in aliquam, rem tempore voluptas illo nisi veritatis quas quod placeat ipsa! Error qui harum accusamus incidunt at libero ipsum, suscipit dolorum esse explicabo in eius voluptates quidem voluptatem inventore amet eaque deserunt veniam dignissimos excepturi? Dolore, quo amet nostrum autem nemo. Sit nam assumenda, corporis ea sunt distinctio nostrum doloribus alias, beatae nesciunt dolore saepe consequuntur minima eveniet porro dolor officiis maiores ab obcaecati officia enim aliquam. Itaque fuga molestiae hic accusantium atque corporis quia id sequi enim vero? Hic aperiam sint facilis aliquam quia, accusamus tenetur earum totam enim est, error. Iusto, reiciendis necessitatibus molestias. Voluptatibus eos explicabo repellat nesciunt nam vero minima.</p>
+					<p>By default, no user data will be shared with the LION-team. However, to improve the web-tool, we would be interested in the LION-coverage of those datasets. To help us to improve this, this options can be switched on. In that case, the names of lipids that can't be found in the LION-database is sent to the LION-team. With this information, we can specifically increase the coverage of lipid species that are found regularly but that are not present in LION yet. Note that only lipid species names ('identifiers') will be sent. Numeric data and enrichment results will NOT be shared.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -227,32 +380,44 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Who are the people behind LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit quidem delectus rerum eligendi mollitia, repudiandae quae beatae. Et repellat quam atque corrupti iusto architecto impedit explicabo repudiandae qui similique aut iure ipsum quis inventore nulla error aliquid alias quia dolorem dolore, odio excepturi veniam odit veritatis. Quo iure magnam, et cum. Laudantium, eaque non? Tempore nihil corporis cumque dolor ipsum accusamus sapiente aliquid quis ea assumenda deserunt praesentium voluptatibus, accusantium a mollitia necessitatibus nostrum voluptatem numquam modi ab, sint rem.</p>
+					<p>LION/web is built by the Lipidomics Centre Utrecht (part of the department of Biochemistry & Cell Biology of Faculty of Veterinary Medicine - Utrecht University).</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Is it possible to run LION/web locally in my computer?</a>
+				<div class="cd-faq-content">
+					<p>Yes, the code is available on <a href=https://github.com/martijnmolenaar/LION-web target="_blank">GitHub</a>. The application is built in R, using a package called Shiny. Don't hesitate to contact us if you have questions.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Is there an R-script available to customize my LION enrichment analysis?</a>
+				<div class="cd-faq-content">
+					<p>The R-code of LION/web is available on GitHub (see previous sub-section). In addition, we are working on a flexible R-script that can be run from the terminal and that can be customized more easily. Please contact us if you are interested to use this script.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">Will LION/web be regularly updated?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>Yes, and you can help us! See the subsection 'What will happen when I select 'automatically send unmatched lipids to LION-team' in the options panel?'</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">What kind of features can I expect in the future?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>Currently, we are working on a heatmap module containing the most affected LION-terms. This provides an intuitive way to visualize a number of conditions at once. If you have a nice dataset and are interested in this feature, please contact us.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">I have a question or remark, how can I contact the LION-team?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>There is a tab with a contact form on the left of the LION/web website. If you leave your email address, we will try to reply as soon as possible.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 			<li>
 				<a class="cd-faq-trigger" href="#0">Can I contribute to LION or LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis provident officiis, reprehenderit numquam. Praesentium veritatis eos tenetur magni debitis inventore fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat distinctio velit.</p>
+					<p>Yes! More information will follow. For now, please use our contact form.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
