@@ -47,7 +47,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">What is a LION-term?</a>
 				<div class="cd-faq-content">
-					<p>LION contains nodes and relations and is hierarchically structured. Lipid species are placed in the bottom of the tree, whereas lipid properties are placed higher. As a result, all these properties are directly or indirectly linked with a subset of lipid-species. A LION-term is a node in the ontology containing all its lipid species associations. A LION-term has a name (for example, 'diacylglycerophosphocholines [GP0101]'), an ID (for example 'LION:0000030') and a list of associations (for example 'PC(16:0/18:1); PC(16:0/16:1; PC(36:2); etc...').</p>
+					<p>LION contains nodes and relations and is hierarchically structured. Lipid species are placed in the bottom of the tree, whereas lipid properties are placed higher. As a result, all these properties are directly or indirectly linked with a subset of lipid-species. A LION-term is a node in the ontology containing all its lipid species associations. A LION-term has a name (for example, 'diacylglycerophosphocholines [GP0101]'), an ID (for example 'LION:0000030') and a list of associations (for example 'PC(16:0/18:1); PC(16:0/16:1; PC(36:2); etc.').</p>
 				</div> <!-- cd-faq-content -->
 			</li>
                         <li>
@@ -59,7 +59,7 @@
                          <li>
 				<a class="cd-faq-trigger" href="#0">Does LION/web use Gene Ontology (GO)?</a>
 				<div class="cd-faq-content">
-					<p>No. Although there are many similarites, LION/web is not using Gene Ontology (GO). LION/web performs enrichment analysis using a dedicated lipid-related ontology called LION. Nevertheless, the enrichment analysis algorithm (the <a href=http://bioconductor.org/packages/release/bioc/html/topGO.html target="_blank">topGO</a> R-package) that is used by LION/web was initially built for GO-enrichment.</p>
+					<p>No. Although there are some similarities, LION/web is not using Gene Ontology (GO). LION/web performs enrichment analysis using a dedicated lipid-related ontology called LION. Nevertheless, the enrichment analysis algorithm (the <a href=http://bioconductor.org/packages/release/bioc/html/topGO.html target="_blank">topGO</a> R-package) that is used by LION/web was initially built for GO-enrichment.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -95,7 +95,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">How should I format input files?</a>
 				<div class="cd-faq-content">
-					<p>There are three ways to submit data. In most cases, users will use the 'ranking mode' with CSV-file upload. Here, a 'comma-separated values' (CSV)-file can be uploaded to LION/web. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid conentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is two, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
+					<p>There are three ways to submit data. In most cases, users will use the 'ranking mode' with CSV-file upload. Here, a 'comma-separated values' (CSV)-file can be uploaded to LION/web. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid concentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is two, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
 <table width="865">
 <tbody>
 <tr>
@@ -206,13 +206,13 @@
                         <li>
 				<a class="cd-faq-trigger" href="#0">Should I normalize my data before submitting it to LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check wether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular website that supports several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>.</p>
+					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check whether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular website that supports several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
                         <li>
 				<a class="cd-faq-trigger" href="#0">I have missing values in my dataset. Is this a problem?</a>
 				<div class="cd-faq-content">
-					<p>Yes, LION/web cannot process datasets with missing values and produce an error. Missing values can be caused by biological and/or technical reasons. Hence, there is not one simple solution. Typically, you can either romove lipids with missing values or replace missing values by an imputed value. Many approaches exist. A popular website that supports several algorithms to impute missing values is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>. More about imputation methods in lipidomics in this <a href=https://www.nature.com/articles/s41598-017-19120-0 target="_blank">paper</a> and this <a href=https://metabolomics.cc.hawaii.edu/software/MetImp/ target="_blank">web-tool (MetImp)</a>. To use MetImp and MetaboAnalyst, CSV-files should be reformatted according to their formatting guidelines.</p> 
+					<p>Yes, LION/web cannot process datasets with missing values and produce an error. Missing values can be caused by biological and/or technical reasons. Hence, there is not one simple solution. Typically, you can either remove lipids with missing values or replace missing values by an imputed value. Many approaches exist. A popular website that supports several algorithms to impute missing values is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>. More about imputation methods in lipidomics in this <a href=https://www.nature.com/articles/s41598-017-19120-0 target="_blank">paper</a> and this <a href=https://metabolomics.cc.hawaii.edu/software/MetImp/ target="_blank">web-tool (MetImp)</a>. To use MetImp and MetaboAnalyst, CSV-files should be reformatted according to their formatting guidelines.</p> 
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -238,7 +238,7 @@
                          <li>
 				<a class="cd-faq-trigger" href="#0">When should I choose 'target-list mode'?</a>
 				<div class="cd-faq-content">
-					<p>The easiest way to get a feeling for enrichment analysis is by comparing a small subset of lipids ('target-list') with all the lipids in the experiment ('background-list'). This subset can be derived from many types of analysis. For instance, in a time-course experiment, it can happen that a subset of lipids behaves very similar: these lipids have a high level of correlation with each other. A question that migh rise is: do they share certain properties, like lipid class, or level of unsaturation? This question can be addressed in the 'target-list mode'. Simply enter the lipid names from the target-list in the upper panel and enter all lipid names in the experiment in the bottom panel. After submission, the fractions of all LION-terms will be assessed for both the target-list and the background list and compared. This is done by a one-tailed Fisher's exact test. This test will calculate the probability ('p-value') that the fractions of lipids associated with property X in both the target-list and the background-list are the same. In contrast, a low p-value will be returned when property X is more abundant in the target-list than in the background-list. For example, a target-list contains 20 lipids, of which 10 (= 50%) are fom the class phospatidylcholine. The background list contains 400 lipids and 50 (= 12.5%) of them are fom the class phospatidylcholine. This means that phospatidylcholines are 4x enriched (50 / 12.5 = 4) in the target-list. Indeed, a one-tailed Fisher's exact test return a p-value of 0.001785476: phospatidylcholines are (very) significantly enriched in the target-list.</p>
+					<p>The easiest way to get a feeling for enrichment analysis is by comparing a small subset of lipids ('target-list') with all the lipids in the experiment ('background-list'). This subset can be derived from many types of analysis. For instance, in a time-course experiment, it can happen that a subset of lipids behaves very similar: these lipids have a high level of correlation with each other. A question that might rise is: do they share certain properties, like lipid class, or level of unsaturation? This question can be addressed in the 'target-list mode'. Simply enter the lipid names from the target-list in the upper panel and enter all lipid names in the experiment in the bottom panel. After submission, the fractions of all LION-terms will be assessed for both the target-list and the background list and compared. This is done by a one-tailed Fisher's exact test. This test will calculate the probability ('p-value') that the fractions of lipids associated with property X in both the target-list and the background-list are the same. In contrast, a low p-value will be returned when property X is more abundant in the target-list than in the background-list. For example, a target-list contains 20 lipids, of which 10 (= 50%) are from the class phospatidylcholine. The background list contains 400 lipids and 50 (= 12.5%) of them are from the class phospatidylcholine. This means that phospatidylcholines are 4x enriched (50 / 12.5 = 4) in the target-list. Indeed, a one-tailed Fisher's exact test return a p-value of 0.001785476: phospatidylcholines are (very) significantly enriched in the target-list.</p>
 
 				</div> <!-- cd-faq-content -->
 			</li>    
@@ -246,7 +246,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">When should I choose 'ranking mode'</a>
 				<div class="cd-faq-content">
-					<p>Sometimes there is no obvious 'target-list' available. For instance, if you want to compare the lipidomes of condition B with condition A. Although it is possible to contruct a target-list (for example, by p-value or fold-change tresholding), the choice of an arbitrary treshold will affect the outcomes. To circumvent this, there is another enrichment analysis mode called 'ranking mode'. In this mode, lipids will be ranked based on a 'local statistic' (see next sub-section). To assess enrichment, the distribution of property X ('LION-term') will be analyzed. For example, in a lipidomics dataset with 400 lipids, 50 lipids are of the class phospatidylcholine. All lipids from this dataset are ranked by comparing (by 'local statistic') the concentrations of condition B vs. condition A. Lipids that are abundant in condition B are ranked higher, whereas abundant lipids in condition A are ranked lower. Now the distribution of phospatidylcholine will be analyzed. By chance, an uniform distribution of the 50 lipids is expected. However, when these lipids are found higher in the ranked list than one would expect by chance, phospatidylcholines are likely to be enriched in condition B. In LION/web, LION-term distributions will be assessed by one-tailed Kolmogorov–Smirnov tests, resulting in probabilities ('p-values') that distributions are a result of chance. In contrast, low p-values will be returned when LION-terms are higher ranked than expected by chance: this term is enriched.</p>
+					<p>Sometimes there is no obvious 'target-list' available. For instance, if you want to compare the lipidomes of condition B with condition A. Although it is possible to construct a target-list (for example, by p-value or fold-change thresholding), the choice of an arbitrary threshold will affect the outcomes. To circumvent this, there is another enrichment analysis mode called 'ranking mode'. In this mode, lipids will be ranked based on a 'local statistic' (see next sub-section). To assess enrichment, the distribution of property X ('LION-term') will be analyzed. For example, in a lipidomics dataset with 400 lipids, 50 lipids are of the class phospatidylcholine. All lipids from this dataset are ranked by comparing (by 'local statistic') the concentrations of condition B vs. condition A. Lipids that are abundant in condition B are ranked higher, whereas abundant lipids in condition A are ranked lower. Now the distribution of phospatidylcholine will be analyzed. By chance, an uniform distribution of the 50 lipids is expected. However, when these lipids are found higher in the ranked list than one would expect by chance, phospatidylcholines are likely to be enriched in condition B. In LION/web, LION-term distributions will be assessed by one-tailed Kolmogorov–Smirnov tests, resulting in probabilities ('p-values') that distributions are a result of chance. In contrast, low p-values will be returned when LION-terms are higher ranked than expected by chance: this term is enriched.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -344,21 +344,21 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION-enrichment table tab?</a>
 				<div class="cd-faq-content">
-					<p>This table shows all the LION-terms that could be associated with the provided dataset. For every term, the following information is provided: term ID; term discription; the number of lipid species associated with the term ('Annotated'); the raw p-value (see enrichment analysis modes) and the FDR-corrected q-value (see also sub-section about FDR q-values). In the 'target-list mode', two extra columns are provided: the number of lipids associated with the target-list ('Significant') and the number of lipids that is expected in the target-list by chance ('Expected'). The LION-terms are sorted by FDR q-value (from low to high). The results can be downloaded by clicking on one of the download buttons underneath the table.</p>
+					<p>This table shows all the LION-terms that could be associated with the provided dataset. For every term, the following information is provided: term ID; term description; the number of lipid species associated with the term ('Annotated'); the raw p-value (see enrichment analysis modes) and the FDR-corrected q-value (see also sub-section about FDR q-values). In the 'target-list mode', two extra columns are provided: the number of lipids associated with the target-list ('Significant') and the number of lipids that is expected in the target-list by chance ('Expected'). The LION-terms are sorted by FDR q-value (from low to high). The results can be downloaded by clicking on one of the download buttons underneath the table.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment graph tab?</a>
 				<div class="cd-faq-content">
-					<p>In this graph, the 40 most enriched LION-terms are shown in a bargraph. On the y-axis, the terms are displayed and sorted by enrichment. This x-axis displays the -log(FDR q-value), resulting in high values for enriched terms. The color of the bars is scaled by the enrichment (from gray to red). The graph can be downloaded by clicking on one of the download buttons underneath the graph (SVG for vector format, PNG for bitmap format).</p>
+					<p>In this graph, the 40 most enriched LION-terms are shown in a bar graph. On the y-axis, the terms are displayed and sorted by enrichment. This x-axis displays the -log(FDR q-value), resulting in high values for enriched terms. The color of the bars is scaled by the enrichment (from gray to red). The graph can be downloaded by clicking on one of the download buttons underneath the graph (SVG for vector format, PNG for bitmap format).</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment network tab?</a>
 				<div class="cd-faq-content">
-					<p>LION is is a hierarchical network. It can be usefull to see indivual LION-terms in their broader context. The colors of the nodes are scaled by the raw p-value.</p>
+					<p>LION is is a hierarchical network. It can be useful to see individual LION-terms in their broader context. The colors of the nodes are scaled by the raw p-value.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -373,7 +373,7 @@
                         <li>
 				<a class="cd-faq-trigger" href="#0">LION/web reports the enrichment of biophysical properties, what does that mean?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>This enrichment means that lipid species associated with a given biophysical property are overrepresented in the target-list or on top of the ranked list. However, it is important to note that many biophycical properties are also affected by factors not taken into account (proteins, cholesterol levels, etc.). The enrichment of biophysical properties cannot replace functional measurements. Typically, enrichment analyses are used for hypothesis formation.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 			<li>
@@ -396,7 +396,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Will my datasets be stored somewhere?</a>
 				<div class="cd-faq-content">
-					<p>User-provided datasets and enrichment results will NOT be stored and won't be visable for other users or the LION-team. All results should be downloaded directly after analysis, as they will be lost after 10 minutes of inactivity.</p>
+					<p>User-provided datasets and enrichment results will NOT be stored and won't be visible for other users or the LION-team. All results should be downloaded directly after analysis, as they will be lost after 10 minutes of inactivity.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
