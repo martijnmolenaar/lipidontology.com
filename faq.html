@@ -22,6 +22,7 @@
 		<li><a href="#Modes">Analysis Modes</a></li>
                 <li><a href="#Options">Options</a></li>
 		<li><a href="#Output">Output</a></li>
+                <li><a href="#Errors">Errors</a></li>
 		<li><a href="#privacy">Privacy</a></li>
 		<li><a href="#about">About</a></li>
 	</ul> <!-- cd-faq-categories -->
@@ -42,10 +43,17 @@
 					<p>LION/web is a website that can be accessed via www.lipidontology.com. LION/web performs enrichment analyses on user-provided lipidomics datasets. The tool will report enrichment of LION-terms, which are sets of lipids that share a certain property. An example of a LION-term is 'sphingolipids', this term contains all lipid species in the dataset of the class 'sphingolipids'.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is a LION-term?</a>
+				<div class="cd-faq-content">
+					<p>LION contains nodes and relations and is hierarchically structured. Lipid species are placed in the bottom of the tree, whereas lipid properties are placed higher. As a result, all these properties are directly or indirectly linked with a subset of lipid-species. A LION-term is a node in the ontology containing all its lipid species associations. A LION-term has a name (for example, 'diacylglycerophosphocholines [GP0101]'), an ID (for example 'LION:0000030') and a list of associations (for example 'PC(16:0/18:1); PC(16:0/16:1; PC(36:2); etc...').</p>
+				</div> <!-- cd-faq-content -->
+			</li>
                         <li>
 				<a class="cd-faq-trigger" href="#0">Why should I used LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Lipidomics profiling is getting more and more popular. Nevertheless, tools to analyze lipidomics data were largely lacking. A risk of analyzing large datasets manually, without the support of unbiased tools, is cherry picking. Even if you are aware of this risk, it is very hard to keep track of all trends and not to focus on your favourite lipid class or fatty acid. LION/web keeps an eye on the big trends for you. Moreover, there is no other tool yet that is able to combine the many dimensions (lipid classes, fatty acid saturation, association with biophysical properties, etc.) of lipidomics data in one analysis.</p>
+					<p>Lipidomics profiling is getting more and more popular. Nevertheless, tools to analyze lipidomics data were largely lacking. A risk of analyzing large datasets manually, without the support of unbiased tools, is cherry picking. Even if you are aware of this risk, it is very hard to keep track of all trends and not to focus on your favourite lipid class or fatty acid. LION/web keeps an eye on the big trends for you. Moreover, there is no other tool yet that is able to combine the many dimensions (lipid classes, fatty acid saturation, association with biophysical properties, etc.) of lipidomics data in one analysis. Publication-quality figures and tables can be downloaded in just a few mouse clicks.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
                          <li>
@@ -87,7 +95,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">How should I format input files?</a>
 				<div class="cd-faq-content">
-					<p>There are three ways to submit data. In most cases, users will use the 'ranking mode' with CSV-file upload. Here, a 'comma-separated values' (CSV)-file can be uploaded to LION/web. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid conentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is three, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
+					<p>There are three ways to submit data. In most cases, users will use the 'ranking mode' with CSV-file upload. Here, a 'comma-separated values' (CSV)-file can be uploaded to LION/web. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid conentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is two, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
 <table width="865">
 <tbody>
 <tr>
@@ -198,7 +206,13 @@
                         <li>
 				<a class="cd-faq-trigger" href="#0">Should I normalize my data before submitting it to LION/web?</a>
 				<div class="cd-faq-content">
-					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check wether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular website that supports several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a> .</p>
+					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check wether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular website that supports several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">I have missing values in my dataset. Is this a problem?</a>
+				<div class="cd-faq-content">
+					<p>Yes, LION/web cannot process datasets with missing values and produce an error. Missing values can be caused by biological and/or technical reasons. Hence, there is not one simple solution. Typically, you can either romove lipids with missing values or replace missing values by an imputed value. Many approaches exist. A popular website that supports several algorithms to impute missing values is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>. More about imputation methods in lipidomics in this <a href=https://www.nature.com/articles/s41598-017-19120-0 target="_blank">paper</a> and this <a href=https://metabolomics.cc.hawaii.edu/software/MetImp/ target="_blank">web-tool (MetImp)</a>. To use MetImp and MetaboAnalyst, CSV-files should be reformatted according to their formatting guidelines.</p> 
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -232,30 +246,44 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">When should I choose 'ranking mode'</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>Sometimes there is no obvious 'target-list' available. For instance, if you want to compare the lipidomes of condition B with condition A. Although it is possible to contruct a target-list (for example, by p-value or fold-change tresholding), the choice of an arbitrary treshold will affect the outcomes. To circumvent this, there is another enrichment analysis mode called 'ranking mode'. In this mode, lipids will be ranked based on a 'local statistic' (see next sub-section). To assess enrichment, the distribution of property X ('LION-term') will be analyzed. For example, in a lipidomics dataset with 400 lipids, 50 lipids are of the class phospatidylcholine. All lipids from this dataset are ranked by comparing (by 'local statistic') the concentrations of condition B vs. condition A. Lipids that are abundant in condition B are ranked higher, whereas abundant lipids in condition A are ranked lower. Now the distribution of phospatidylcholine will be analyzed. By chance, an uniform distribution of the 50 lipids is expected. However, when these lipids are found higher in the ranked list than one would expect by chance, phospatidylcholines are likely to be enriched in condition B. In LION/web, LION-term distributions will be assessed by one-tailed Kolmogorov–Smirnov tests, resulting in probabilities ('p-values') that distributions are a result of chance. In contrast, low p-values will be returned when LION-terms are higher ranked than expected by chance: this term is enriched.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
                         <li>
 				<a class="cd-faq-trigger" href="#0">What are local statistics and why do I need them?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>LION/web needs a value for every lipid to be able to rank them in the 'ranking mode', This value is called a 'local statistic'. In LION/web, you can choose from three different, build-in local statistics.</p>
+					
 				</div> <!-- cd-faq-content -->
 			</li>
                         <li>
 				<a class="cd-faq-trigger" href="#0">What local statistics should I choose?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>LION/web supports three different local statistics.</p><br>
+                                        <b>P-values from one-tailed Welch Two Sample t-tests. </b><p>Here, p-values are calculated for every lipid by comparing two conditions. The conditions of interest can be selected below. High ratios (A vs. B) will result in low p-values, so the ranking direction is from low to high. This setting is automatically updated after selecting this local statistic. T-tests are considered to be more robust as compared to fold change values.</p><br>
+					<b>2-LOG[fold change] values. </b><p>For every lipid, the 2-LOG ratio of the mean concentrations of two conditions is calculated. Abundant lipids in condition B will result in positive values, whereas abundant lipids in condition A will result in negative values. Hence, the ranking direction is from high to low. This setting is automatically updated after selecting this local statistic. The conditions of interest can be selected below. This local statistic does not take standard deviation into account, so lipid concentrations close to noise levels can result in unexpected extreme 2-LOG[fold-change] values.</p><br>
+					<b>P-values from one-way ANOVA F-tests. </b><p>With this local statistic, more than two conditions can be selected. For every lipid, a p-value from a one-way ANOVA F-test is calculated. Lipids with the highest fluctuations will result in the lowest p-values, so the ranking direction is from low to high. This setting is automatically updated after selecting this local statistic. </p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Do I need to correct the p-values as local statistic for multiple comparisons?</a>
+				<div class="cd-faq-content">
+					<p>This is not necessary. The p-values will be used to rank the lipids, a p-value correction will result in the same ranking.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
                         <li>
 				<a class="cd-faq-trigger" href="#0">Is it possible to use my own local statistics?</a>
 				<div class="cd-faq-content">
-					<p>Yes, this is possible. To do this, go to 'ranking mode', skip the '(i) process input' tab and go directly to the '(ii) analysis' tab. Here is a form where lipids can be entered followed by a value, separated by a comma (or tab). This value can be your own local statistic. If you calculate this in a spreadsheet, data can directly be copy-pasted to the form.</p>
+					<p>Yes, this is possible. To do this, go to 'ranking mode', skip the '(i) process input' tab and go directly to the '(ii) analysis' tab. Here you can find a form where lipids can be entered followed by a value, separated by a comma (or tab). This value can be your own local statistic. If you calculate this value in a spreadsheet, data can directly be copy-pasted to the form. Don't forget to select the right ranking direction.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
-
-			
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Which setting do I need for 'ranking direction'?</a>
+				<div class="cd-faq-content">
+					<p>This depends on the selected local statistic. If you select one of the default local statistics, the right ranking direction will be updated automatically.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">Where can I find some examples to illustrate LION/web's workflow?</a>
@@ -265,6 +293,15 @@
 			</li>
 		</ul> <!-- cd-faq-group -->
 
+                 <ul id="Errors" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Errors</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">My CSV-file produces an error, what is going wrong?</a>
+				<div class="cd-faq-content">
+					<p>Errors are often caused by errors in the CSV-file formatting. See the 'input' section for more info about formatting guidelines. Easy mistakes are: ';' as delimiter (should be ','); ',' as decimal separator (should be '.'); missing or non-numeric values (see 'missing-values' sub-section); a mistake in the headers of the file (see 'input' section); lipid identifiers with commas (results in an extra column).</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                 </ul> <!-- cd-faq-group -->
 
 			<ul id="Options" class="cd-faq-group">
 				<li class="cd-faq-title"><h2>Options</h2></li>
@@ -293,36 +330,35 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">What kind of results is generated by LION/web?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>LION/web reports enrichment analyses of LION-terms.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION-input tab?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>In this tab, LION/web shows which input lipid can be matched to LION. When a lipid species is recognized, the corresponding LION-term ID is shown. When a lipid could not be matched, 'not found' is shown. The percentage of lipids that could be matched to LION is shown on top of the table. The results can be downloaded by clicking on the download button underneath the table.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION-enrichment table tab?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>This table shows all the LION-terms that could be associated with the provided dataset. For every term, the following information is provided: term ID; term discription; the number of lipid species associated with the term ('Annotated'); the raw p-value (see enrichment analysis modes) and the FDR-corrected q-value (see also sub-section about FDR q-values). In the 'target-list mode', two extra columns are provided: the number of lipids associated with the target-list ('Significant') and the number of lipids that is expected in the target-list by chance ('Expected'). The LION-terms are sorted by FDR q-value (from low to high). The results can be downloaded by clicking on one of the download buttons underneath the table.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
-
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment graph tab?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>In this graph, the 40 most enriched LION-terms are shown in a bargraph. On the y-axis, the terms are displayed and sorted by enrichment. This x-axis displays the -log(FDR q-value), resulting in high values for enriched terms. The color of the bars is scaled by the enrichment (from gray to red). The graph can be downloaded by clicking on one of the download buttons underneath the graph (SVG for vector format, PNG for bitmap format).</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment network tab?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>LION is is a hierarchical network. It can be usefull to see indivual LION-terms in their broader context. The colors of the nodes are scaled by the raw p-value.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
@@ -343,14 +379,14 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">How can I download the results?</a>
 				<div class="cd-faq-content">
-					<p>...</p>
+					<p>In every output tab, there are download buttons on the bottom of the page. Downloading the network is not supported yet.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 
 			<li>
 				<a class="cd-faq-trigger" href="#0">What is the difference between 'download table' and 'download report'?</a>
 				<div class="cd-faq-content">
-					<p>....</p>
+					<p>'Download table' will download the table that is shown in the web-tool. In contrast, the file from 'download report' contains, besides the enrichment table also the lipid species associations for every LION-term.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 		</ul> <!-- cd-faq-group -->
@@ -386,7 +422,7 @@
 			<li>
 				<a class="cd-faq-trigger" href="#0">Who are the people behind LION/web?</a>
 				<div class="cd-faq-content">
-					<p>LION/web is built by the Lipidomics Centre Utrecht (part of the department of Biochemistry & Cell Biology of Faculty of Veterinary Medicine - Utrecht University).</p>
+					<p>LION/web is built and maintained by the Lipidomics Centre Utrecht (part of the department of Biochemistry & Cell Biology of Faculty of Veterinary Medicine - Utrecht University).</p>
 				</div> <!-- cd-faq-content -->
 			</li>
                         <li>
@@ -418,6 +454,12 @@
 				<a class="cd-faq-trigger" href="#0">I have a question or remark, how can I contact the LION-team?</a>
 				<div class="cd-faq-content">
 					<p>There is a tab with a contact form on the left of the LION/web website. If you leave your email address, we will try to reply as soon as possible.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Should I use the message board (via 'report issues'), or use the contact form?</a>
+				<div class="cd-faq-content">
+					<p>Both options are ok. A benefit of the message board is that questions and solutions are accessible for everybody and that you can interact with other users.</p>
 				</div> <!-- cd-faq-content -->
 			</li>
 			<li>
