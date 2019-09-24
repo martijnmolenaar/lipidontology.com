@@ -5,7 +5,7 @@ LION/web | Lipid Ontology enrichment analysis
 
 ###### 2019-09-16:
 * LION/web: addition of new function 'smartmatching'
-  * when switched on, LION/web checks if ummatched lipid species can be associated with parental terms
+  * when switched on, LION/web checks if unmatched lipid species can be associated with parental terms
 
 ###### 2019-08-07:
 * LION: rewiring of terms related to fatty acid unsaturation.
