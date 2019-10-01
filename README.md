@@ -3,6 +3,12 @@ LION/web | Lipid Ontology enrichment analysis
 
 ## change log:
 
+###### 2019-10-01:
+* LION/web: improved support to download enrichment network.
+  * zip-file now contains: 
+    ** PNG- and SVG-image of the network
+    ** RData- and R-file for user-customization 
+
 ###### 2019-09-16:
 * LION/web: addition of new function 'smartmatching'
   * when switched on, LION/web checks if unmatched lipid species can be associated with parental terms
