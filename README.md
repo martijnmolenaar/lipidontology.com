@@ -3,8 +3,13 @@ LION/web | Lipid Ontology enrichment analysis
 
 ## change log:
 
+###### 2019-10-15:
+* LION/web: improvement of two-sided KS-test
+  * information about down- or upregulation of LION-terms is now available in an extra column
+  * enrichment graph can be grouped by down- vs. upregulation
+
 ###### 2019-10-10:
-* LION/web: improvement of function 'smartmatching'
+* LION/web: improvement of function 'smart matching'
   * unmatched lipids are linked to applicable related terms higher in the hierachy: summed-FA lipids, fatty acids, (sub)classes
 * LION/web: input lipids are given an unique ID (#0001, #0002, etc.)
   * if lipid species are provided more than once, they are now treated as separate features
