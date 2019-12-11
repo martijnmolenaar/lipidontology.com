@@ -1,0 +1,413 @@
+
+<body>
+<header>
+	<h1>LION/web's LION-PCA heatmap module: frequently asked questions (FAQ)</h1>
+</header>
+<section class="cd-faq">
+	<ul class="cd-faq-categories">
+		<li><a class="selected" href="#basics">Basics</a></li>
+		<li><a href="#Input">Input</a></li>
+		<li><a href="#Modes">Analysis</a></li>
+                <li><a href="#Options">Options</a></li>
+		<li><a href="#Output">Output</a></li>
+                <li><a href="#Errors">Errors</a></li>
+		<li><a href="#privacy">Privacy</a></li>
+		<li><a href="#about">About</a></li>
+	</ul> <!-- cd-faq-categories -->
+
+	<div class="cd-faq-items">
+		<ul id="basics" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Basics</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is LION?</a>
+				<div class="cd-faq-content">
+					<p>LION is an abbreviation for LIpid ONtology; LION is an ontology database containing information related to lipid metabolism. An ontology is a way to formalize knowledge by using semantic triples: subject–predicate–object expressions (e.g. "Bobby - is - a cat", or "PC(16:0/16:0) - has a - C16:0 fatty acid").</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is LION-PCA heatmap?</a>
+				<div class="cd-faq-content">
+					<p>LION/web heatmap builds a heatmap of LION-terms, based on user-provided lipidomics datasets. An example of a LION-term is 'sphingolipids', this term contains all lipid species in the dataset of the class 'sphingolipids'. With LION/web heatmap, researchers can visualize the most interesting lipid signatures.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is a LION-term?</a>
+				<div class="cd-faq-content">
+					<p>LION contains nodes and relations and is hierarchically structured. Lipid species are placed in the bottom of the tree, whereas lipid properties are placed higher. As a result, all these properties are directly or indirectly linked with a subset of lipid-species. A LION-term is a node in the ontology containing all its lipid species associations. A LION-term has a name (for example, 'diacylglycerophosphocholines [GP0101]'), an ID (for example 'LION:0000030') and a list of associations (for example 'PC(16:0/18:1); PC(16:0/16:1; PC(36:2); etc.').</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Why should I used LION/web?</a>
+				<div class="cd-faq-content">
+					<p>Lipidomics profiling is getting more and more popular. Nevertheless, tools to analyze lipidomics data were largely lacking. A risk of analyzing large datasets manually, without the support of unbiased tools, is cherry picking. Even if you are aware of this risk, it is very hard to keep track of all trends and not to focus on your favourite lipid class or fatty acid. LION/web keeps an eye on the big trends for you. Moreover, there is no other tool yet that is able to combine the many dimensions (lipid classes, fatty acid saturation, association with biophysical properties, etc.) of lipidomics data in one analysis. Publication-quality figures and tables can be downloaded in just a few mouse clicks.</p>
+				</div> <!-- cd-faq-content -->
+			
+			<li>
+				<a class="cd-faq-trigger" href="#0">Do I have to pay for LION/web services?</a>
+				<div class="cd-faq-content">
+					<p>No, you can use LION/web for free.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+                         <li>
+				<a class="cd-faq-trigger" href="#0">Do I need an account on LION/web?</a>
+				<div class="cd-faq-content">
+					<p>No, you don't need an account for LION/web. Datasets can be submitted directly.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What should I cite when I use the LION-PCA heatmap module of LION/web?</a>
+				<div class="cd-faq-content">
+					<br>
+                                        <b>LION/web: a web-based ontology enrichment tool for lipidomic data analysis. </b>
+					<br>
+					<i>Martijn R. Molenaar, Aike Jeucken, Tsjerk A. Wassenaar, Chris H. A. van de Lest, Jos F. Brouwers, J. Bernd Helms.  </i>
+					<br><em>GigaScience, Volume 8, Issue 6, June 2019, giz061. doi: </em>
+                                        <a href=https://doi.org/10.1093/gigascience/giz061 target="_blank"><em>https://doi.org/10.1093/gigascience/giz061</em></a>    
+                                        <br><br>
+                                        
+                                        <b>GO-PCA: An Unsupervised Method to Explore Gene Expression Data Using Prior Knowledge. </b>
+					<br>
+					<i>Florian Wagner. </i>
+					<br><em>PLOS ONE 10(11): e0143196. doi: </em>
+                                        <a href=https://doi.org/10.1371/journal.pone.0143196 target="_blank"><em>https://doi.org/10.1371/journal.pone.0143196</em></a>    
+                                        
+                                         
+
+
+                  
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="Input" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Input</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">How should I format input files?</a>
+				<div class="cd-faq-content">
+					<p>A 'comma-separated values' (CSV)-file should be uploaded by clicking the 'browse' button. This CSV-file is a flat text-file containing the lipidomics data and some metadata. LION/web expects the following format: first a column with the names of the lipid species; followed by columns containing numeric data that represent lipid concentrations. The first row of these columns should contain a condition identifier, the second row a unique sample identifiers. The minimum amount of samples per condition is two, the minimum amount of conditions is two. If you format the CSV-file in Excel, make sure the delimiter is set to 'comma' and the decimal separator is set to 'point'. The file should look like this:</p><br>
+<table width="865">
+<tbody>
+<tr>
+<td width="130">&nbsp;</td>
+<td width="80">conA</td>
+<td width="80">conA</td>
+<td width="80">conA</td>
+<td width="80">conB</td>
+<td width="80">conB</td>
+<td width="80">conB</td>
+<td width="80">...</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>smp1</td>
+<td>smp2</td>
+<td>smp3</td>
+<td>smp4</td>
+<td>smp5</td>
+<td>smp6</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PI(32:3)</td>
+<td>0.392&nbsp;</td>
+<td>0.683&nbsp;</td>
+<td>0.506&nbsp;</td>
+<td>0.719&nbsp;</td>
+<td>0.033&nbsp;</td>
+<td>0.831&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PG(18:1/22:1)</td>
+<td>0.742&nbsp;</td>
+<td>0.747&nbsp;</td>
+<td>0.654&nbsp;</td>
+<td>0.139&nbsp;</td>
+<td>0.145&nbsp;</td>
+<td>0.951&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(16:0/22:3)</td>
+<td>0.197&nbsp;</td>
+<td>0.899&nbsp;</td>
+<td>0.700&nbsp;</td>
+<td>0.547&nbsp;</td>
+<td>0.306&nbsp;</td>
+<td>0.072&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PG(14:0/16:0)</td>
+<td>0.576&nbsp;</td>
+<td>0.622&nbsp;</td>
+<td>0.057&nbsp;</td>
+<td>0.208&nbsp;</td>
+<td>0.528&nbsp;</td>
+<td>0.013&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(O-18:0/20:6)</td>
+<td>0.777&nbsp;</td>
+<td>0.549&nbsp;</td>
+<td>0.678&nbsp;</td>
+<td>0.084&nbsp;</td>
+<td>0.023&nbsp;</td>
+<td>0.028&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>PC(18:1/20:1)</td>
+<td>0.725&nbsp;</td>
+<td>0.012&nbsp;</td>
+<td>0.166&nbsp;</td>
+<td>0.874&nbsp;</td>
+<td>0.549&nbsp;</td>
+<td>0.337&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>SM(d18:1/16:1)</td>
+<td>0.603&nbsp;</td>
+<td>0.250&nbsp;</td>
+<td>0.191&nbsp;</td>
+<td>0.445&nbsp;</td>
+<td>0.121&nbsp;</td>
+<td>0.189&nbsp;</td>
+<td>...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<br>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">Should I normalize my data before submitting it to LION/web?</a>
+				<div class="cd-faq-content">
+					<p>Yes, this is very important. There are many ways to normalize data, so LION/web cannot check whether data is properly normalized. If you don't know how to normalize the data, we recommend normalization by expressing all lipid species as fraction of the sum. A popular website that supports several normalization algorithms is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                        <li>
+				<a class="cd-faq-trigger" href="#0">I have missing values in my dataset. Is this a problem?</a>
+				<div class="cd-faq-content">
+					<p>Yes, LION/web cannot process datasets with missing values and will produce an error. Missing values can be caused by biological and/or technical reasons. Hence, there is not one simple solution. Typically, you can either remove lipids with missing values or replace missing values by an imputed value. Many approaches exist. A popular website that supports several algorithms to impute missing values is <a href=https://www.metaboanalyst.ca target="_blank">MetaboAnalyst</a>. More about imputation methods in lipidomics in this <a href=https://www.nature.com/articles/s41598-017-19120-0 target="_blank">paper</a> and this <a href=https://metabolomics.cc.hawaii.edu/software/MetImp/ target="_blank">web-tool (MetImp)</a>. To use MetImp and MetaboAnalyst, CSV-files should be reformatted according to their formatting guidelines.</p> 
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What lipid identifiers can I use?</a>
+				<div class="cd-faq-content">
+					<p>Lipid nomenclature is not standardized in the lipidomics field. The best way to submit lipidomics data to LION/web is to make use of the notation style of LIPIDMAPS. In short, lipid species start with a class-prefix, followed by fatty acids that are surrounded by parentheses: (nr_of_C:nr_of_DBs/nr_of_C:nr_of_DBs). For example: PE(16:0/18:1), SM(d18:1/20:1), LPC(16:0). It's also possible to sum fatty acids: PC(36:2). Check <a href=https://www.lipidmaps.org target="_blank">www.lipidmaps.org</a> for more examples. LION/web also supports other often used notation styles, for instance notations without parentheses: PC 32:0. LION/web will try to convert this notation into LIPIDMAPS style.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="Modes" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>LION-PCA heatmap workflow</h2></li>
+			
+			<li>
+				<a class="cd-faq-trigger" href="#0">Is the algorithm of LION-PCA heatmap described before?</a>
+				<div class="cd-faq-content">
+					<p>LION-PCA is a modified version of GO-PCA, an algorithm that generates heatmaps of microarray/RNAseq data using Gene Ontology (GO) [check the <a href="#basics">Basics</a> section for a reference]. Our version uses the same strategy for lipidomics data using LION.</p>
+					
+				</div> <!-- cd-faq-content -->
+			</li>
+			
+			<li>
+				<a class="cd-faq-trigger" href="#0">How can I generate a LION-PCA heatmap?</a>
+				<div class="cd-faq-content">
+					<p>1. Upload your lipidomics dataset by clicking 'Browse' in the left 'Data Upload' panel.</p>
+					<p>2. Submit the dataset by clicking 'Submit Data'.</p>
+					<i>A table will appear in the right panel showing the input identiers mapped to LION.</i>
+					<p>3. Select the number of Principal Components that will be used in the analysis.</p>
+					<p>4. Select if samples or LION-terms should be clustered.</p>
+					<p>5. If desired, conditions in the dataset can be manually color-coded in the 'heatmap colors' box.</p>
+					<p>6. Generate the heatmap by clicking 'Show heatmap'.</p>
+					<i>The LION-PCA heatmap will be displayed in the right panel.</i>
+					<p></p>
+				</div> <!-- cd-faq-content -->
+			</li>
+			
+			<li>
+				<a class="cd-faq-trigger" href="#0">How are LION-terms selected?</a>
+				<div class="cd-faq-content">
+					<p>First, Principal Component Analysis (PCA) is performed on the provided dataset. Then, the loadings of Principal Component 1 (PC-1) are used to rank the lipids and to perform LION-enrichment analysis (two-sides KS-tests), significant LION-terms are selected. This is repeated for all the principal components selected by the user. Hence, a LION-term present in the heatmap was signficant enriched in any of the principal componenents.</p>
+					
+				</div> <!-- cd-faq-content -->
+			</li>
+
+                         
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Where can I find some examples to illustrate LION/web's workflow?</a>
+				<div class="cd-faq-content">
+					<p>Examples are available below the input forms.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+                 <ul id="Errors" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Errors</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">My CSV-file produces an error, what is going wrong?</a>
+				<div class="cd-faq-content">
+					<p>Errors are often caused by errors in the CSV-file formatting. See the 'input' section for more info about formatting guidelines. Easy mistakes are: ';' as delimiter (should be ','); ',' as decimal separator (should be '.'); missing or non-numeric values (see 'missing-values' sub-section); a mistake in the headers of the file (see 'input' section); lipid identifiers with commas (results in an extra column).</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                 </ul> <!-- cd-faq-group -->
+
+			<ul id="Options" class="cd-faq-group">
+				<li class="cd-faq-title"><h2>Options</h2></li>
+				<li>
+					<a class="cd-faq-trigger" href="#0">Should I select 'exclude parent terms with same associations as child'?</a>
+					<div class="cd-faq-content">
+						<p>LION has a hierarchical structure. This means that LION-terms are subdivided into more specific LION-terms. However, sometimes 'child' terms contain the same lipid species as their parents. In this case, assessing enrichment of both terms will result in the same enrichment scores, without providing useful information. Switching on this option will skip the parent term, resulting in increased statistical power.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+                <li>
+					<a class="cd-faq-trigger" href="#0">Should I select 'Use smartmatching'?</a>
+					<div class="cd-faq-content">
+						<p>When a lipid is not present in LION, its name usually provides enough clues to map it to the right LION-terms. For instance, CL(13:0/16:0/18:2/21:4) is not present in LION, the option 'smart matching' will dynamically match this identifier to CL(68:6) and its indivudual fatty acids in LION.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+				
+				<li>
+					<a class="cd-faq-trigger" href="#0">When should I select 'Predict fatty acid assocations'?</a>
+					<div class="cd-faq-content">
+						<p>It is common practice in lipidomics to make use of phospholipid identifiers with summed fatty acid, i.e., PC(32:0). Sometimes it is usefull to associate this identifier with its most likely fatty acids, in this case 16:0/16:0. The associations are based on mammalian lipidomics datasets, so it is not advised to use this option for non-mammalian datasets.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+				
+				<li>
+					<a class="cd-faq-trigger" href="#0">Should I select 'automatically send unmatched lipids to LION-team'?</a>
+					<div class="cd-faq-content">
+						<p>This will help us to increase the coverage of LION. For more information, see the Privacy sub-section.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+				
+                 <li>
+					<a class="cd-faq-trigger" href="#0">Should I select 'preselect LION-terms for analysis'?</a>
+					<div class="cd-faq-content">
+						<p>By default, all LION-terms that can be associated with the dataset are assessed for enrichment analysis. When you want to asses only a selection of LION-terms, this option should be switched on. LION-terms that should be evaluated should be selected below the option switch. Note that LION has a hierarchical structure, sub-branches can be displayed by clicking on the symbol left of the names. Only (green) selected LION-terms will used in the analysis. An important benefit of LION-term pre-selection is the decreased amount of LION-terms, resulting in increased statistical power.</p>
+					</div> <!-- cd-faq-content -->
+				</li>
+                </ul> <!-- cd-faq-group -->
+
+		<ul id="Output" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Output</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">What type of output is generated by LION-PCA?</a>
+				<div class="cd-faq-content">
+					<p>LION-PCA is a heatmap visualization of LION-terms.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What information is shown in the LION enrichment network tab?</a>
+				<div class="cd-faq-content">
+					<p>LION is a hierarchical network. It can be useful to see individual LION-terms in their broader context. The colors of the nodes are scaled by the raw p-value.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+            <li>
+				<a class="cd-faq-trigger" href="#0">How can I download the results?</a>
+				<div class="cd-faq-content">
+					<p>There are download buttons on the bottom of every output tab. Downloading the network is not supported yet.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What is the difference between 'download table' and 'download report'?</a>
+				<div class="cd-faq-content">
+					<p>'Download table' will download the table that is shown in the web-tool. In contrast, the zip-file from 'download report' contains, besides the enrichment table, also two files with details about the content of LION-terms and lipid associations.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="privacy" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>Privacy</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Will my datasets be stored somewhere?</a>
+				<div class="cd-faq-content">
+					<p>User-provided datasets and enrichment results will NOT be stored and won't be visible for other users or the LION-team. All results should be downloaded directly after analysis, as they will be lost after 10 minutes of inactivity.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">Will my user information be stored?</a>
+				<div class="cd-faq-content">
+					<p>LION/web collects some anonymous user statistics to be able to monitor the website's usage.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+			<li>
+				<a class="cd-faq-trigger" href="#0">What will happen when I select 'automatically send unmatched lipids to LION-team' in the options panel?</a>
+				<div class="cd-faq-content">
+					<p>By default, no user data will be shared with the LION-team. However, to improve the web-tool, we would be interested in the LION-coverage of those datasets. To help us to improve this, this option can be switched on. In that case, the names of lipids that can't be found in the LION-database is sent to the LION-team. With this information, we can specifically increase the coverage of lipid species that are found regularly but that are not present in LION yet. Note that only lipid species names ('identifiers') will be sent. Numeric data and enrichment results will NOT be shared.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+
+		</ul> <!-- cd-faq-group -->
+
+		<ul id="about" class="cd-faq-group">
+			<li class="cd-faq-title"><h2>About</h2></li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Who are the people behind LION/web?</a>
+				<div class="cd-faq-content">
+					<p>LION/web is built and maintained by the Lipidomics Centre Utrecht (part of the department of Biochemistry & Cell Biology of Faculty of Veterinary Medicine - Utrecht University).</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+                      
+				<a class="cd-faq-trigger" href="#0">Will LION/web be regularly updated?</a>
+				<div class="cd-faq-content">
+					<p>Yes, and you can help us! See the subsection 'What will happen when I select 'automatically send unmatched lipids to LION-team' in the options panel?'</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+			
+			<li>
+				<a class="cd-faq-trigger" href="#0">I have a question or remark, how can I contact the LION-team?</a>
+				<div class="cd-faq-content">
+					<p>There is a tab with a contact form on the left of the LION/web website. If you leave your email address, we will try to reply as soon as possible.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Should I use the message board (via 'report issues'), or use the contact form?</a>
+				<div class="cd-faq-content">
+					<p>Both options are ok. A benefit of the message board is that questions and solutions are accessible for everybody and that you can interact with other users.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+			<li>
+				<a class="cd-faq-trigger" href="#0">Can I contribute to LION or LION/web?</a>
+				<div class="cd-faq-content">
+					<p>Yes! For now, please use our contact form.</p>
+				</div> <!-- cd-faq-content -->
+			</li>
+
+	
+		</ul> <!-- cd-faq-group -->
+	</div> <!-- cd-faq-items -->
+	<a href="#0" class="cd-close-panel">Close</a>
+</section> <!-- cd-faq -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/jquery.mobile.custom.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
